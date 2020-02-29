@@ -1,0 +1,75 @@
+﻿@inject IAdminLTE adminLTE
+@inject ISiteSettings settings;
+@{
+    var siteInfo = settings.SiteInfo;
+    var title = ViewBag.Title;
+    var pageTitle = string.IsNullOrEmpty(siteInfo?.Name) ? string.IsNullOrEmpty(title) ? null : title : (string.IsNullOrEmpty(title) ? siteInfo.Name : $"{title} | {siteInfo.Name}");
+    var options = adminLTE.Options;
+    var classes = adminLTE.Classes;
+    var pageClass = classes.BodyClass;
+    if (adminLTE.IsSideBarCollapsed)
+    {
+        pageClass = $"{pageClass} {classes.SideBarCollapsedClass}";
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@pageTitle</title>
+    @RenderSection("ThemeLinks", false)
+    @if (!IsSectionDefined("ThemeLinks"))
+    {
+        <link rel="stylesheet" href="/_themes/AdminLTE3/adminlte.css" />
+        <link rel="stylesheet" href="/_themes/AdminLTE3/adminlte.extra.css" />
+    }
+    <link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/lib/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    @RenderSection("Header", false)
+</head>
+<body class="@pageClass">
+    <div class="wrapper">
+        <partial name="NavBar" />
+        <partial name="SideBar" />
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">@ViewBag.Title</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <partial name="Breadcrumbs" optional="@options.Breadcrumbs" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container-fluid">
+                    <form method="post">
+                        @RenderBody()
+                    </form>
+                </div>
+            </div>
+        </div>
+        <aside class="control-sidebar control-sidebar-dark" condition="options.Aside">
+            <div class="p-3 control-sidebar-content os-host os-theme-light os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-overflow os-host-overflow-y os-host-transition">
+                <partial name="Aside" />
+            </div>
+        </aside>
+        <partial name="Footer" condition="@options.Footer" />
+    </div>
+    @RenderSection("PageEnd", false)
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="/_themes/adminlte3/adminlte.js"></script>
+    <script src="/_themes/adminlte3/sidebar.js"></script>
+    @*<script src="/lib/jquery.blockUI/jquery.blockUI.js"></script>*@
+    @*<script src="/js/SPA.js"></script>*@
+    @RenderSection("Scripts", false)
+</body>
+</html>

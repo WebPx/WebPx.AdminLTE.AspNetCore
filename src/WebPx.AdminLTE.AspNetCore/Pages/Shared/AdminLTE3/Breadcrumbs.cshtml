@@ -1,0 +1,18 @@
+﻿@*@inject WebPx.Web.IBreadCrumbsManager BreadCrumbsManager*@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+//var current = BreadCrumbsManager.GetBreadCrumbs(ViewData).LastOrDefault();
+}
+<ol class="breadcrumb float-sm-right">
+    <li class="breadcrumb-item">
+        <a href="/">
+            <i class="fa fa-home"></i>
+           Home
+        </a>
+    </li>
+    <li class="breadcrumb-item active">
+        @ViewBag.Title
+    </li>
+</ol>

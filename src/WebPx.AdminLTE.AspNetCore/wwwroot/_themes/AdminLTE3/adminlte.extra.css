@@ -1,0 +1,97 @@
+﻿.pagination.rounded-sm page-link:first-child {
+    border-top-left-radius: .2rem;
+    border-bottom-left-radius: .2rem;
+}
+.pagination.rounded-sm page-link:last-child {
+    border-top-right-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+}
+.waitSpin .text {
+    color: #a0a0a0;
+    margin-bottom: 1em;
+}
+.table-responsive {
+    display:table;
+}
+.card-body.p-0 .table {
+    margin-bottom:0px;
+}
+.breadcrumb-item>a>i {
+    margin-right:5px;
+}
+dl.dl-horizontal {
+    margin-block-end: 0;
+}
+.dl-horizontal:before,
+.dl-horizontal:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dl-horizontal dd {
+    margin-left: 180px;
+    margin-bottom:0px;
+}
+.card-body.p-0 .table thead > tr > th:first-of-type, .card-body.p-0 .table thead > tr > td:first-of-type, .card-body.p-0 .table tbody > tr > th:first-of-type, .card-body.p-0 .table tbody > tr > td:first-of-type {
+    padding-left: 0.3rem;
+}
+.table {
+    border-color:#f0f0f0;
+    border-style:none;
+}
+th.nowrap, td.nowrap {
+    width: 1px;
+    white-space: nowrap;
+}
+.pull-right {
+    float:right;
+}
+.pull-right+.pull-right {
+    margin-right:5px;
+}
+.btn>i:first-child {
+    margin-right:5px;
+}
+.text-center .card-title, .text-right .card-title {
+    float: unset;
+}
+h1.card-title {
+    font-size: 2.5rem;
+}
+
+h2.card-title {
+    font-size: 2rem;
+}
+
+h3.card-title {
+    font-size: 1.75rem;
+}
+
+h4.card-title {
+    font-size: 1.5rem;
+}
+
+h5.card-title {
+    font-size: 1.25rem;
+}
+
+h6.card-title {
+    font-size: 1rem;
+}
+/*.card-header-tabs {
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-bottom: 0;
+}*/

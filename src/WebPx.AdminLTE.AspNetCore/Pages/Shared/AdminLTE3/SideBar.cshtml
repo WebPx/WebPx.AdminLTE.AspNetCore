@@ -1,0 +1,19 @@
+﻿@inject IAdminLTE adminLTE
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var options = adminLTE.Options;
+    bool userPanel = options.UserPanel;
+        //sideBarCollapsed = options.SideBarCollapsed;
+    //var any = userPanel || sideBarMenu;
+}
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <partial name="Brand" />
+    <div class="sidebar">
+        <partial name="UserPanel" condition="options.UserPanel" />
+        <nav class="mt-2">
+            <partial name="LeftMenu" optional="true" />
+        </nav>
+    </div>
+</aside>
