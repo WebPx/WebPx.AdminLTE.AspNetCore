@@ -4,6 +4,16 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
     <RootNamespace>WebPx.AdminLTE</RootNamespace>
+    <Company>WebPx Technologies</Company>
+    <Version>3.0.0</Version>
+    <Authors>WebPx Technologies</Authors>
+    <Product>WebPx Framework</Product>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Copyright>(c) WebPx Technologies 2020</Copyright>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>AdminLTE Template Razor Class Libraries for ASP.NET Core</Description>
+    <PackageProjectUrl>https://github.com/WebPx/WebPx.AdminLTE.AspNetCore</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="wwwroot\**\*" />
@@ -34,5 +44,11 @@
     <EmbeddedResource Update="Resources\AdminLTETexts.es.resx">
       <ExcludeFromManifest>true</ExcludeFromManifest>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\WebPx.Web.Common\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>

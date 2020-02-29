@@ -10,10 +10,10 @@
         public bool Breadcrumbs { get; set; } = true;
         public bool Search { get; set; } = true;
         public bool UserPanel { get; set; } = true;
-        public bool Notifications { get; set; } = false;
-        public bool Messages { get; set; } = false;
+        public bool Notifications { get; set; } = true;
+        public bool Messages { get; set; } = true;
         public bool Footer { get; set; } = true;
         public bool NavBarLinks { get; set; } = true;
-        public bool SideBarCollapsed { get; set; } = false;
+        public bool SideBarCollapsed { get; set; } = true;
     }
 }
