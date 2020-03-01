@@ -1,4 +1,4 @@
-# WebPx.AdminLTE.AspNetCore
+# WebPx.AdminLTE.AspNetCore [![Build status](https://ci.appveyor.com/api/projects/status/a1ex5xlcd7ja5k24?svg=true)](https://ci.appveyor.com/project/jlchavez/webpx-adminlte-aspnetcore)
 AdminLTE 3 Template Razor Class Libraries for ASP.NET Core
 
 Based on AdminLTE 3 Template by https://adminlte.io/, we decided to provide a ready to run versión adapted to ASP.NET Core Razor Pages
