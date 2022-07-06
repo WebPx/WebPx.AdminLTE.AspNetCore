@@ -7,30 +7,30 @@ using System.Text;
 
 namespace WebPx.AdminLTE
 {
-    sealed class AdminLTEViewLocationExpander : IViewLocationExpander
+    internal sealed class AdminLTEViewLocationExpander : IViewLocationExpander
     {
-        private AdminLTEOptions options;
+        private readonly AdminLTEOptions _options;
 
         public AdminLTEViewLocationExpander(IOptions<AdminLTEOptions> options)
         {
-            this.options = options.Value;
+            this._options = options.Value;
         }
 
-        private const string KEY = "AdminLTE3";
+        private const string Key = "AdminLTE3";
 
         public void PopulateValues(ViewLocationExpanderContext context)
         {
-            if (!string.IsNullOrEmpty(options.Location))
-                context.Values[KEY] = options.Location;
+            if (!string.IsNullOrEmpty(_options.Location))
+                context.Values[Key] = _options.Location;
         }
 
         public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)
         {
-            if (context.Values.TryGetValue(KEY, out string location))
+            if (context.Values.TryGetValue(Key, out string location))
             {
                 IEnumerable<string> themeLocations = new[]
                 {
-                    $"/Pages/Shared/{location}/{{0}}.cshtml"
+                    $"/Views/Shared/{location}/{{0}}.cshtml"
                 };
 
                 viewLocations = viewLocations.Concat(themeLocations);

@@ -1,0 +1,30 @@
+﻿@model HomeModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Administration";
+}
+<p>This is a basic page. You should test the <a asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a></p>
+<h3>Installation</h3>
+<p>You can add this template to your ASP.NET Core Web App, by adding the <a href="//www.nuget.org/packages/WebPx.AdminLTE.AspNetCore">WebPx.AdminLTE.AspNetCore</a> package.</p>
+<h4>Microsoft VisualStudio 20017/2019</h4>
+<p class="p-1 pl-2 bg-dark rounded">Install-Package WebPx.AdminLTE.AspNetCore</p>
+<h4>Microsoft VisualStudio Code</h4>
+<p class="p-1 pl-2 bg-dark rounded">dotnet add package WebPx.AdminLTE.AspNetCore</p>
+<h3>Configure</h3>
+<p>Add to your Startup class:</p>
+<figure class="rounded bg-white"><pre>
+<code>services.AddAdminLTE();</code>
+</pre></figure>
+<p>Configure:</p>
+<figure class="rounded bg-white"><pre>
+<code>services.AddAdminLTE((o) => {
+    o.Search = true;
+    o.UserPanel = false;
+    o.Footer = true;
+    o.SideBarCollapsed = true;
+});</code>
+</pre></figure>
+<h3>Contribute and Learn <i class="fab fa-github"></i></h3>
+<p>You can find more details on GitHub, <a href="//github.com/WebPx/WebPx.AdminLTE.AspNetCore">WebPx.AdminLTE.AspNetCore</a>.</p>

@@ -19,6 +19,12 @@
     <EmbeddedResource Include="wwwroot\**\*" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Pages\AdminLTE3\**" />
+    <Content Remove="Pages\AdminLTE3\**" />
+    <EmbeddedResource Remove="Pages\AdminLTE3\**" />
+    <None Remove="Pages\AdminLTE3\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Remove="wwwroot\_themes\AdminLTE3\sidebar.js" />
   </ItemGroup>
   <ItemGroup>
@@ -50,5 +56,8 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Shared\" />
   </ItemGroup>
 </Project>
