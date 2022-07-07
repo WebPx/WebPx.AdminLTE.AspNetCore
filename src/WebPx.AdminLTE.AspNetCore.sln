@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPx.AdminLTE.AspNetCore.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPx.AdminLTE.AspNetCore.MVC.Template", "WebPx.AdminLTE.AspNetCore.MVC.Template\WebPx.AdminLTE.AspNetCore.MVC.Template.csproj", "{04C7C3F4-06BA-4D2C-903D-CFFF7DCB68AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPx.AdminLTE.AspNetCore.Statics.Shared", "WebPx.AdminLTE.AspNetCore.Statics.Shared\WebPx.AdminLTE.AspNetCore.Statics.Shared.csproj", "{2EFFC57A-97B1-47D9-8EA3-10E66D43AFFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPx.AdminLTE.AspNetCore.Statics", "WebPx.AdminLTE.AspNetCore.Statics\WebPx.AdminLTE.AspNetCore.Statics.csproj", "{BB442E29-332C-4FDE-93D4-427B14C1F1E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{04C7C3F4-06BA-4D2C-903D-CFFF7DCB68AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04C7C3F4-06BA-4D2C-903D-CFFF7DCB68AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04C7C3F4-06BA-4D2C-903D-CFFF7DCB68AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EFFC57A-97B1-47D9-8EA3-10E66D43AFFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EFFC57A-97B1-47D9-8EA3-10E66D43AFFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EFFC57A-97B1-47D9-8EA3-10E66D43AFFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EFFC57A-97B1-47D9-8EA3-10E66D43AFFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB442E29-332C-4FDE-93D4-427B14C1F1E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB442E29-332C-4FDE-93D4-427B14C1F1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB442E29-332C-4FDE-93D4-427B14C1F1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB442E29-332C-4FDE-93D4-427B14C1F1E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

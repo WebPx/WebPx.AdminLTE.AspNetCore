@@ -1,7 +1,8 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@inject IOptions<AdminLTEDemoSettings> demoSettings
+@inject IOptions<AdminLTEOptions> settings
 @{
+    var baseUrl = demoSettings.Value.BaseUrl;
+    var options = settings.Value;
 }
 <li class="nav-item dropdown">
     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -12,7 +13,7 @@
         <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-                <img src="_themes/AdminLTE3/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                <img src="@(baseUrl)/_themes/AdminLTE3/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                 <div class="media-body">
                     <h3 class="dropdown-item-title">
                         Brad Diesel
@@ -28,7 +29,7 @@
         <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-                <img src="_themes/AdminLTE3/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <img src="@(baseUrl)/_themes/AdminLTE3/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                 <div class="media-body">
                     <h3 class="dropdown-item-title">
                         John Pierce
@@ -44,7 +45,7 @@
         <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-                <img src="_themes/AdminLTE3/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <img src="@(baseUrl)/_themes/AdminLTE3/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                 <div class="media-body">
                     <h3 class="dropdown-item-title">
                         Nora Silvester
@@ -57,6 +58,6 @@
             <!-- Message End -->
         </a>
         <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        <a href="@options.MessagesUrl" class="dropdown-item dropdown-footer">See All Messages</a>
     </div>
 </li>

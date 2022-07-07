@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WebPx.AdminLTE.AspNetCore.MVC.Template.Data
+﻿namespace WebPx.AdminLTE.AspNetCore.MVC.Template.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

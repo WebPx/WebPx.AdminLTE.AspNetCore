@@ -1,14 +1,6 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@*@inject WebPx.Web.ISiteManager siteManager*@
-@inject ISiteSettings settings;
-@{
-    var siteInfo = settings.SiteInfo;
-}
+﻿@inject IAdminLTE _settings;
 <footer class="main-footer">
-    @*<div class="float-right d-none d-sm-inline" condition="false">
-        Anything you want
-    </div>*@
-    <strong>@Html.Raw(string.Format(siteInfo.Copyright, siteInfo.Name, DateTime.Today.Year))</strong>
+    <div class="float-right d-none d-sm-inline" condition="false">
+        <strong>@Html.Raw(_settings.SiteCopyright)</strong>
+    </div>
 </footer>

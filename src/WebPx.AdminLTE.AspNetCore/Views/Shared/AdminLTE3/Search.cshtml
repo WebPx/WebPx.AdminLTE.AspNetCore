@@ -1,12 +1,7 @@
 ﻿@inject IAdminLTE adminLTE
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
 <form class="form-inline ml-3" action="@adminLTE.Options.SearchPage">
     <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control form-control-navbar" type="search" placeholder="@AdminLTETexts.Search" aria-label="@AdminLTETexts.Search">
         <div class="input-group-append">
             <button class="btn btn-navbar" type="submit">
                 <i class="fas fa-search"></i>

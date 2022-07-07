@@ -1,5 +1,3 @@
-using System;
-
 namespace WebPx.AdminLTE.AspNetCore.MVC.Template.Models
 {
     public class ErrorViewModel

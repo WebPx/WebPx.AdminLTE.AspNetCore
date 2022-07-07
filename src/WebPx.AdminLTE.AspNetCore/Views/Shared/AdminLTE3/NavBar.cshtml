@@ -1,21 +1,8 @@
 ﻿@inject IAdminLTE adminLTE
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
 @{
     var options = adminLTE.Options;
 }
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    @*<menu static-display-levels="2" site-map="WebPx.Web.SiteMap.SiteMap.Default"
-          class="navbar-nav"
-          item-class="nav-item d-none d-sm-inline-block" link-class="nav-link" sub-menu-class="nav nav-treeview">
-        <menuitem url="#" icon="fas fa-bars" data-widget="pushmenu"></menuitem>
-        <menuitem title="Home" url="/">
-            <menuitem title="About" url="/About"></menuitem>
-            <menuitem title="Contact" url="/Contact"></menuitem>
-            <menuitem title="Dashboard" url="/Dashboard"></menuitem>
-        </menuitem>
-    </menu>*@
     <partial name="NavBarLinks" />
     <partial name="Search" condition="options.Search" />
     <ul class="navbar-nav ml-auto">

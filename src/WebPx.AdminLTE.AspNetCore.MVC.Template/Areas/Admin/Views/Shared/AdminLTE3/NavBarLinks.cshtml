@@ -1,10 +1,6 @@
 ﻿@inject IAdminLTE adminLTE
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
 @{
     var options = adminLTE.Options;
-    //var any = options.NavBarLinks || true;
 }
     <ul class="navbar-nav">
         <li class="nav-item">
@@ -13,10 +9,7 @@
         @if (options.NavBarLinks)
         {
         <li class="nav-item d-none d-sm-inline-block">
-            <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">@AdminLTETexts.Home 22</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">@AdminLTETexts.Home</a>
         </li>
         }
-        <li class="nav-item d-none d-sm-inline-block">
-            <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link">2</a>
-        </li>
     </ul>

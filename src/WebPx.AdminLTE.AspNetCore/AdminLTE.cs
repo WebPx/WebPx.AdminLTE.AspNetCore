@@ -1,21 +1,25 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using WebPx.Web;
 
 namespace WebPx.AdminLTE
 {
     public sealed class AdminLTE : IAdminLTE
     {
-        public AdminLTE(IOptions<AdminLTEOptions> options, IHttpContextAccessor httpContextAccessor)
+
+        public AdminLTE(IOptions<AdminLTEOptions> options, IHttpContextAccessor httpContextAccessor, ISiteSettings settings)
         {
+            Settings = settings;
             Options = options?.Value;
             Classes = new AdminLTEClasses();
-            this.HttpContextAccesor = httpContextAccessor;
+            this.HttpContextAccessor = httpContextAccessor;
         }
-        private readonly IHttpContextAccessor HttpContextAccesor;
 
+        private IHttpContextAccessor HttpContextAccessor { get; }
+
+        private ISiteSettings Settings { get; }
+        private SiteInfo SiteInfo => Settings.SiteInfo;
         public AdminLTEOptions Options { get; }
         public AdminLTEClasses Classes { get; }
 
@@ -23,7 +27,7 @@ namespace WebPx.AdminLTE
         {
             get
             {
-                if (HttpContextAccesor.HttpContext.Request.Cookies.TryGetValue("adminlte-sidebar", out string value))
+                if (HttpContextAccessor.HttpContext.Request.Cookies.TryGetValue("adminlte-sidebar", out string value))
                     if (bool.TryParse(value, out bool isCollapsed))
                     {
                         return isCollapsed;
@@ -31,17 +35,15 @@ namespace WebPx.AdminLTE
                 return Options.SideBarCollapsed;
             }
         }
-    }
 
-    public class AdminLTEClasses
-    {
-        public AdminLTEClasses()
+        private string _siteCopyright = null;
+
+        public string SiteCopyright
         {
-
+            get
+            {
+                return _siteCopyright ?? (_siteCopyright = string.Format(SiteInfo.Copyright, SiteInfo.Name, DateTime.Today.Year, SiteInfo.Url));
+            }
         }
-
-        public string BodyClass { get; set; } = "hold-transition sidebar-mini layout-fixed layout-navbar-fixed";
-
-        public string SideBarCollapsedClass { get; set; } = "sidebar-collapse";
     }
 }

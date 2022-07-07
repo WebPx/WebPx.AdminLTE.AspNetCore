@@ -1,13 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@inject IOptions<AdminLTEDemoSettings> demoSettings
 @{
+    var baseUrl = demoSettings.Value.BaseUrl;
 }
 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
     <div class="image">
-        <img src="/_themes/adminlte3/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        <img src="@baseUrl/_themes/adminlte3/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
     </div>
     <div class="info">
-        <a href="#" class="d-block">José Chávez</a>
+        <a href="#" class="d-block">John Doe</a>
     </div>
 </div>

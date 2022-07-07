@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+		<RootNamespace>WebPx</RootNamespace>
+		<Company>WebPx Technologies</Company>
+		<Version>3.2.0</Version>
+		<Authors>WebPx Technologies</Authors>
+		<Product>WebPx Framework</Product>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<Copyright>(c) WebPx Technologies 2022</Copyright>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Description>AdminLTE Template Razor Class Libraries for ASP.NET Core</Description>
+		<PackageProjectUrl>https://github.com/WebPx/WebPx.AdminLTE.AspNetCore</PackageProjectUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="wwwroot\**\*" />
+		<EmbeddedResource Remove="wwwroot\**\.npmignore" />
+		<EmbeddedResource Remove="wwwroot\**\.editorconfig" />
+		<Content Remove="wwwroot\**\*" />
+		<None Include="wwwroot\**\.npmignore" />
+		<None Include="wwwroot\**\.editorconfig" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\LICENSE" Link="LICENSE">
+	    <PackagePath></PackagePath>
+	    <Pack>True</Pack>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.1.1" />
+		<PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\WebPx.AdminLTE.AspNetCore\WebPx.AdminLTE.AspNetCore.csproj" />
+	</ItemGroup>
+</Project>

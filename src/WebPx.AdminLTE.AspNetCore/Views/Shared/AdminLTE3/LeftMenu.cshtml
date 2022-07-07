@@ -1,9 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<nav class="mt-2">
+﻿<nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
@@ -11,7 +6,7 @@
             <a asp-area="" asp-page="/Index" class="nav-link">
                 <i class="nav-icon fas fa-home"></i>
                 <p>
-                    Home
+                    @AdminLTETexts.Home
                 </p>
             </a>
         </li>
@@ -19,7 +14,7 @@
             <a asp-area="" asp-page="/Dashboard" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                    Dashboard
+                    @AdminLTETexts.Dashboard
                 </p>
             </a>
         </li>
@@ -27,7 +22,7 @@
             <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                    Sample Menu
+                    @SampleTexts.SampleMenu
                     <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
@@ -35,19 +30,19 @@
                 <li class="nav-item">
                     <a href="./index.html" class="nav-link active">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Item 1</p>
+                        <p>@SampleTexts.Item1</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="./index2.html" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Item 2</p>
+                        <p>@SampleTexts.Item2</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="./index3.html" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Item 3</p>
+                        <p>@SampleTexts.Item3</p>
                     </a>
                 </li>
             </ul>

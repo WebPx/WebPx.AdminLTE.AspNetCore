@@ -7,6 +7,7 @@
     var options = adminLTE.Options;
     var classes = adminLTE.Classes;
     var pageClass = classes.BodyClass;
+    var basePath = options.StaticsPath;
     if (adminLTE.IsSideBarCollapsed)
     {
         pageClass = $"{pageClass} {classes.SideBarCollapsedClass}";
@@ -22,11 +23,11 @@
     @RenderSection("ThemeLinks", false)
     @if (!IsSectionDefined("ThemeLinks"))
     {
-        <link rel="stylesheet" href="/_themes/AdminLTE3/adminlte.css" />
-        <link rel="stylesheet" href="/_themes/AdminLTE3/adminlte.extra.css" />
+        <link rel="stylesheet" href="@basePath/_themes/AdminLTE3/adminlte.css" />
+        <link rel="stylesheet" href="@basePath/_themes/AdminLTE3/adminlte.extra.css" />
     }
-    <link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="/lib/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="@basePath/lib/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="@basePath/lib/overlayScrollbars/css/OverlayScrollbars.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     @RenderSection("Header", false)
 </head>
@@ -63,11 +64,11 @@
         <partial name="Footer" condition="@options.Footer" />
     </div>
     @RenderSection("PageEnd", false)
-    <script src="/lib/jquery/dist/jquery.min.js"></script>
-    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/lib/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <script src="/_themes/adminlte3/adminlte.js"></script>
-    <script src="/_themes/adminlte3/sidebar.js"></script>
+    <script src="@basePath/lib/jquery/dist/jquery.min.js"></script>
+    <script src="@basePath/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="@basePath/lib/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="@basePath/_themes/adminlte3/adminlte.js"></script>
+    <script src="@basePath/_themes/adminlte3/sidebar.js"></script>
     @*<script src="/lib/jquery.blockUI/jquery.blockUI.js"></script>*@
     @*<script src="/js/SPA.js"></script>*@
     @RenderSection("Scripts", false)

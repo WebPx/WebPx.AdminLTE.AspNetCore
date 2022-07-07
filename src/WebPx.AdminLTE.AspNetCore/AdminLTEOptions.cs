@@ -71,5 +71,20 @@
         /// Gets or sets a value that identifies if the theme will support looking for views in Areas.
         /// </summary>
         public bool AreaViewsOverride { get; set; } = true;
+
+        /// <summary>
+        /// Gets or sets the path for the static contents.
+        /// </summary>
+        public string StaticsPath { get; set; } = null;
+
+        /// <summary>
+        /// Gets or sets the path to the messages page
+        /// </summary>
+        public string MessagesUrl { get; set; } = "#";
+
+        /// <summary>
+        /// Gets or sets the path to the notifications page
+        /// </summary>
+        public string NotificationsUrl { get; set; } = "#";
     }
 }

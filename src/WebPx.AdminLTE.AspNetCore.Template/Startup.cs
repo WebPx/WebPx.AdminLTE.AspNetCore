@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebPx.AdminLTE.AspNetCore.Template.Data;
@@ -46,11 +41,11 @@ namespace WebPx.AdminLTE.AspNetCore.Template
                 o.UserPanel = false;
                 o.Footer = true;
                 o.SideBarCollapsed = true;
-            });
+            }).AddAdminLTEStatics().AddAdminLTESharedStatics();
             services.AddSiteFeatures((o) =>
             {
                 o.Name = "WebPx AdminLTE Demo"; 
-                o.Copyright = "Copyright &copy; {1} <a href='https://webpx.com'>{0}<a/>. All rights reserved.";
+                o.Copyright = "Copyright &copy; {1} <a href='{2}'>{0}<a/>. All rights reserved.";
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
