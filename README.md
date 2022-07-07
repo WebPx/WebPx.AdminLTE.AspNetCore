@@ -8,7 +8,7 @@ ColorLib's Html Template Live Demo: https://adminlte.io/themes/dev/AdminLTE/inde
 WebPx Live Demo: [Demo.AdminLTE3.WebPx.com](https://demo.adminlte3.webpx.com)
 
 # Features
-- Razor Class Library with embbeded resources
+- Razor Class Library with Views required to function the template
 - Split in Views so that it allows to replace one or more parts for the whole site, any area or folder
 - Configuration for adjusting which features you wan't to be called.
 - SideBar collapsible and persistent for the user
@@ -17,13 +17,17 @@ WebPx Live Demo: [Demo.AdminLTE3.WebPx.com](https://demo.adminlte3.webpx.com)
     - ThemeLinks, for replacing links to AdminLTE3 CSS files
     - PageEnd, for extra html at the end of the page, before scripts
     - Scripts, for additional javascript files/blocks
+- NEW! Two Libraries with Static Content:
+    - WebPx.AdminLTE.AspNetCore.Statics contains all the files that the template includes (js, dist, plugins and Admin LTE Theme)
+    - WebPxAdminLTE.AspNetCore.Statics.Shared contains the pictures and scripts included in the original theme for displaying demo daa
+- NEW! Breaking Change: Views have been changed from /Pages/Shared/AdminLTE3 to /Views/Shared/AdminLTE3 so that it can be shared between MVC and Razor Pages.
 
 # Folder Structure
 
-The Template includes the Layout File (*_Layout*), and various Partial Views that you can replace to adjust your application
+The Template includes the Layout File (*_Layout*), and various Partial Views that you can replace to adjust your application. NEW! For flexibility in area development you can also change this files in the corresponding /Area/[AreaName]/Views/Shared/AdminLTE3 folder so that customization applies per area.
 
 ```
-/Pages
+/Views
     /Shared
         /AdminLTE3
             _Layout.cshtml
@@ -69,21 +73,33 @@ You can add this template to your ASP.NET Core Web App, by adding the WebPx.Admi
 Add to your Startup class:
 
     services.AddAdminLTE();
+    services.AddAdminLTEStatics();
 
 Customize how the template works:
 ```
 services.AddAdminLTE((o) => {
-    o.SiteName = "Demo Site";  // Site Name
-    o.SiteLogo = "/logo.png";  // Site Logo Path
-    o.SearchPath = "/Search";  // Url to the Search Result's page
-    o.Location = "AdminLITE3"; // Folder Name for the template (For future use)
-    o.Aside = true;            // Show/Hide Aside Menu
-    o.Breadcrumbs = true;      // Show/Hide Breadcrumbs
-    o.Message = true;          // Show/Hide Messages Drop Down;
-    o.NavBarLinks = true;      // Show/Hide Top Nav Bar Links
-    o.Footer = true;           // Show/Hide Footer
-    o.SideBarCollapsed = true; // Show/Hide Side Bar Collapsed
-    o.Search = true;           // Show/Hide Search Field
-    o.UserPanel = true;        // Show/Hide User Panel
+    o.SiteName = "Demo Site";              // Site Name
+    o.SiteLogo = "/logo.png";              // Site Logo Path
+    o.SearchPath = "/Search";              // Url to the Search Result's page
+    o.Location = "AdminLITE3";             // Folder Name for the template (For future use)
+    o.Aside = true;                        // Show/Hide Aside Menu
+    o.Breadcrumbs = true;                  // Show/Hide Breadcrumbs
+    o.Message = true;                      // Show/Hide Messages Drop Down;
+    o.NavBarLinks = true;                  // Show/Hide Top Nav Bar Links
+    o.Footer = true;                       // Show/Hide Footer
+    o.SideBarCollapsed = true;             // Show/Hide Side Bar Collapsed
+    o.Search = true;                       // Show/Hide Search Field
+    o.UserPanel = true;                    // Show/Hide User Panel
+    o.StaticsPath = "//cdn.site.com/"      // URL for reusing static content from a common location
+    o.MessagesUrl = "/Messages";           // Url to the page to view messages
+    o.NotificationsUrl = "/Notifications"; // Url to the page to view notifications
 });
 ```
+
+# Next Steps
+
+- Improve documentation
+- Create project templates to start from scratch with the template
+- Create item templates for the partial views
+- Create a Wizard for Visual Studio
+- Package it as a VSIX/Visual Studio Extension
