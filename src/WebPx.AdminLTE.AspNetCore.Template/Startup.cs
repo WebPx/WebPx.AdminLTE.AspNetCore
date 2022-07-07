@@ -41,6 +41,8 @@ namespace WebPx.AdminLTE.AspNetCore.Template
                 o.UserPanel = false;
                 o.Footer = true;
                 o.SideBarCollapsed = true;
+                o.MessagesUrl = "";
+                o.NotificationsUrl = "";
             }).AddAdminLTEStatics().AddAdminLTESharedStatics();
             services.AddSiteFeatures((o) =>
             {

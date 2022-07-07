@@ -1,4 +1,12 @@
-﻿namespace WebPx.AdminLTE.Configuration
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Options;
+using System;
+
+namespace WebPx.AdminLTE.Configuration
 {
     public sealed class AdminLTEStaticsConfigureOptions : IPostConfigureOptions<StaticFileOptions>
     {
